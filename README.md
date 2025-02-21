@@ -386,7 +386,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 ## 🏆 Mérito del Proyecto
 
-El mérito de este proyecto radica en la modernización de una empresa que gestionaba sus registros en papel, llevándola a una plataforma digital eficiente y accesible. Esta transformación ha permitido una mejor gestión de los datos, mayor accesibilidad y una interfaz de usuario más intuitiva.
+El mérito de este proyecto radica en la modernización de una microempresa que gestionaba sus registros en papel mejorando el seguimiento de la cartera y permitiendo un acceso sencillo, llevándola a una plataforma digital eficiente y accesible. Esta transformación ha permitido una mejor gestión de los datos, mayor accesibilidad y una interfaz de usuario más intuitiva.
 
 ## 📸 Pantallazos
 

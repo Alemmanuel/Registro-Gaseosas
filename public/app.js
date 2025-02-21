@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('gaseosaForm');
     const gaseosasList = document.getElementById('gaseosasItems');
-    const API_URL = 'https://gestor-gaseosas-premium.vercel.app/api';
+    const API_URL = 'http://localhost:3000/api';
+    // const API_URL = 'https://registrogaseosas.vercel.app/api';
     const saborSelect = document.getElementById('sabor');
     const cantidadInput = document.getElementById('cantidad');
     const valorTotalInput = document.getElementById('valorTotal');
@@ -106,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function fetchGaseosas() {
+        console.log('el api de get:',`${API_URL}/consultar`)
         try {
             const response = await fetch(`${API_URL}/consultar`);
             if (!response.ok) {
@@ -140,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderGaseosas(gaseosas) {
+        console.log('renderGaseosas', gaseosas);
         const filteredGaseosas = gaseosas.filter(gaseosa => {
             const fecha = filterFecha.value ? new Date(filterFecha.value).toISOString().split('T')[0] : '';
             const modoPago = filterModoPago.value;
@@ -149,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return (!fecha || gaseosa.fechaventa.startsWith(fecha)) &&
                    (!modoPago || gaseosa.modopago === modoPago) &&
-                   (!size || gaseosa.size === size) &&
+                   (!size || gaseosa.tamano === size) &&
                    (!cantidad || gaseosa.cantidad == cantidad) &&
                    (!estado || gaseosa.estado === estado);
         });

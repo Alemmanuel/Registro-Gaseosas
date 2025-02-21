@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
+
 // Endpoint para registrar una nueva gaseosa
 router.post('/registro', async (req, res) => {
     const { sabor, cantidad, valorTotal, estado, modoPago, size, personaNombre } = req.body;
     try {
         const result = await pool.query(
-            `INSERT INTO gaseosas (sabor, cantidad, valorTotal, estado, modoPago, size, persona_id)
-             VALUES ($1, $2, $3, $4, $5, $6, (SELECT id FROM personas WHERE nombre = $7))
+            `INSERT INTO gaseosas (sabor, cantidad, valorTotal, estado, modoPago, tamano, persona_nombre, fechaventa)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, NOW())
              RETURNING *`,
             [sabor, cantidad, valorTotal, estado, modoPago, size, personaNombre]
         );
@@ -31,7 +32,7 @@ router.put('/actualizar/:id', async (req, res) => {
             valorTotal = $3, 
             estado = $4, 
             modoPago = $5, 
-            size = $6, 
+            tamano = $6, 
             persona_id = (SELECT id FROM personas WHERE nombre = $7)
              WHERE id = $8
              RETURNING *`,
