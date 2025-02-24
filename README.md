@@ -379,8 +379,6 @@ El mérito de este proyecto radica en la modernización de una microempresa que 
 
 ## 📸 Pantallazos
 
-## 📸 Pantallazos
-
 A continuación, se presentan algunos pantallazos de la aplicación:
 
 
