@@ -9,22 +9,18 @@ const controllers = require('./controllers/controller');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors()); // Ensure CORS is enabled
+const corsOptions = {
+    origin: '*', // En desarrollo, permite todas las conexiones
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+};
+
+app.use(cors(corsOptions));
+// app.use(cors()); // Ensure CORS is enabled
 app.use(bodyParser.json());
 app.use('/api', controllers);
-// app.get('/consultar', async (req, res) => {
-//     try {
-//         const result = await pool.query('SELECT * FROM gaseosas');
-//         res.status(200).json(result.rows);
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ error: 'Error al consultar gaseosas' });
-//     }
-// });
-
-// console.log(router.stack);
-
-// Crear la tabla si no existe
+    
+// // Crear la tabla si no existe
 // async function crearTabla() {
 //     try {
 //         await pool.query(`
@@ -63,15 +59,3 @@ app.use('/api', controllers);
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
-
-// Test the database connection
-// async function testDB() {
-//     try {
-//         const res = await pool.query("SELECT NOW()");
-//         console.log("Hora actual en la BD:", res.rows[0]);
-//     } catch (err) {
-//         console.error("Error en la consulta", err);
-//     }
-// }
-
-// testDB();

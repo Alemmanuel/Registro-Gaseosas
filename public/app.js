@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('gaseosaForm');
     const gaseosasList = document.getElementById('gaseosasItems');
-    const API_URL = 'http://localhost:3000/api';
-    // const API_URL = 'https://registrogaseosas.vercel.app/api';
+    // const API_URL = 'http://localhost:3000/api';
+    const API_URL = 'https://registrogaseosas.vercel.app/api';
     const saborSelect = document.getElementById('sabor');
     const cantidadInput = document.getElementById('cantidad');
     const valorTotalInput = document.getElementById('valorTotal');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editSize = document.getElementById('editSize');
     const saveEditButton = document.getElementById('saveEdit');
     const cancelEditButton = document.getElementById('cancelEdit');
-    const editPersonaNombre = document.getElementById('editPersonaNombre');
+    const editpersona_nombre = document.getElementById('editpersona_nombre');
     let gaseosaIdToEdit = null;
 
     // Variables para el modal de confirmación de eliminación
@@ -29,23 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Variables para los filtros
     const filterFecha = document.getElementById('filterFecha');
-    const filterModoPago = document.getElementById('filterModoPago');
-    const filterSize = document.getElementById('filterSize');
-    const filterCantidad = document.getElementById('filterCantidad');
-    const filterEstado = document.getElementById('filterEstado');
     const applyFiltersButton = document.getElementById('applyFilters');
     const clearFiltersButton = document.getElementById('clearFilters');
 
     applyFiltersButton.addEventListener('click', () => {
-        fetchGaseosas();
+        fetchGaseosasFilter();
     });
 
     clearFiltersButton.addEventListener('click', () => {
         filterFecha.value = '';
-        filterModoPago.value = '';
-        filterSize.value = '';
-        filterCantidad.value = '';
-        filterEstado.value = '';
         fetchGaseosas();
     });
 
@@ -67,18 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const modoPagoSelect = document.getElementById('modoPago');
-    const personaNombreInput = document.getElementById('personaNombre');
+    const persona_nombreInput = document.getElementById('persona_nombre');
 
     confirmRegisterButton.addEventListener('click', async () => {
         confirmModal.classList.add('hidden');
         const formData = new FormData(form);
         const gaseosaData = Object.fromEntries(formData.entries());
-        gaseosaData.size = sizeSelect.value; // Ensure to include the size
+        gaseosaData.size = sizeSelect.value; // Asegurar incluir el tamaño
 
         console.log('Sending data:', gaseosaData);
 
-        // Add the current date to the gaseosaData object
-        gaseosaData.fechaVenta = new Date().toISOString().split('T')[0];
+        // Agregar la fecha actual al objeto gaseosaData
+        const now = new Date();
+        gaseosaData.fechaVenta = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+            .toISOString()
+            .split('T')[0];
 
         try {
             const response = await fetch(`${API_URL}/registro`, {
@@ -107,34 +102,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function fetchGaseosas() {
-        console.log('el api de get:',`${API_URL}/consultar`)
         try {
             const response = await fetch(`${API_URL}/consultar`);
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(`Network response was not ok: ${errorData.error}`);
+                throw new Error(errorData.error || 'Error en la respuesta del servidor');
             }
+
             const gaseosas = await response.json();
-            console.log('Gaseosas:', gaseosas);
+            console.log('Gaseosas recibidas:', gaseosas);
             renderGaseosas(gaseosas);
         } catch (error) {
-            console.error('Error al obtener gaseosas:', error);
+            console.error('Error detallado:', error);
+            alert(`Error al obtener gaseosas: ${error.message}`);
+        }
+    }
+
+    async function fetchGaseosasFilter() {
+        try {
+            const response = await fetch(`${API_URL}/consultar?fecha=${filterFecha.value}`);
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Error en la respuesta del servidor');
+            }
+            const gaseosas = await response.json();
+            console.log('Gaseosas recibidas:', gaseosas);
+            renderGaseosas(gaseosas);
+        } catch (error) {
+            console.error('Error detallado:', error);
             alert(`Error al obtener gaseosas: ${error.message}`);
         }
     }
 
     function formatFecha(fechaISO) {
-        console.log('Formatting date:', fechaISO);
-        if (!fechaISO) {
-            console.error('Fecha no definida');
-            return 'Fecha inválida';
-        }
-        const fecha = new Date(fechaISO);
-        if (isNaN(fecha.getTime())) {
-            console.error('Invalid date:', fechaISO);
-            return 'Fecha inválida';
-        }
-        return fecha.toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        if (!fechaISO) return 'Fecha inválida';
+
+        const fechaUTC = new Date(fechaISO);
+        const fechaLocal = new Date(fechaUTC.getTime() + fechaUTC.getTimezoneOffset() * 60000);
+
+        return fechaLocal.toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' });
     }
 
     function formatPrecio(valor) {
@@ -145,50 +151,45 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('renderGaseosas', gaseosas);
         const filteredGaseosas = gaseosas.filter(gaseosa => {
             const fecha = filterFecha.value ? new Date(filterFecha.value).toISOString().split('T')[0] : '';
-            const modoPago = filterModoPago.value;
-            const size = filterSize.value;
-            const cantidad = filterCantidad.value;
-            const estado = filterEstado.value;
-
-            return (!fecha || gaseosa.fechaventa.startsWith(fecha)) &&
-                   (!modoPago || gaseosa.modopago === modoPago) &&
-                   (!size || gaseosa.tamano === size) &&
-                   (!cantidad || gaseosa.cantidad == cantidad) &&
-                   (!estado || gaseosa.estado === estado);
+            return (!fecha || gaseosa.fechaventa.startsWith(fecha));
         });
 
         gaseosasList.innerHTML = '';
         filteredGaseosas.forEach(gaseosa => {
-            console.log('Rendering gaseosa:', gaseosa);
+            // Usamos únicamente la propiedad "persona_nombre"
+            const nombrePersona = gaseosa.persona_nombre || '';
+            const tamano = gaseosa.size || gaseosa.tamano || '';
             const tr = document.createElement('tr');
+            tr.setAttribute('id', `row-${gaseosa.id}`);
             tr.innerHTML = `
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button class="edit-button text-indigo-600 hover:text-indigo-900"
-                        data-id="${gaseosa.id}"
-                        data-sabor="${gaseosa.sabor}"
-                        data-cantidad="${gaseosa.cantidad}"
-                        data-estado="${gaseosa.estado}"
-                        data-modoPago="${gaseosa.modopago}"
-                        data-size="${gaseosa.size}"
-                        data-valorTotal="${gaseosa.valortotal}"
-                        data-personaNombre="${gaseosa.personanombre || ''}">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button class="delete-button text-red-600 hover:text-green-900" data-id="${gaseosa.id}">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${formatFecha(gaseosa.fechaventa)}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.sabor}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.cantidad}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.estado}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${formatPrecio(gaseosa.valortotal)}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.modopago}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.size}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.personanombre || ''}</td>
-            `;
+    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+        <button class="edit-button text-indigo-600 hover:text-indigo-900"
+            data-id="${gaseosa.id}"
+            data-sabor="${gaseosa.sabor}"
+            data-cantidad="${gaseosa.cantidad}"
+            data-estado="${gaseosa.estado}"
+            data-modoPago="${gaseosa.modopago}"
+            data-size="${tamano}"
+            data-valorTotal="${gaseosa.valortotal}"
+            data-personaNombre="${nombrePersona}">
+            <i class="fas fa-edit"></i>
+        </button>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+        <button class="delete-button text-red-600 hover:text-green-900" data-id="${gaseosa.id}">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${formatFecha(gaseosa.fechaventa)}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.sabor}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.cantidad}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.estado}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${formatPrecio(gaseosa.valortotal)}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gaseosa.modopago}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${tamano}</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 persona-nombre">${nombrePersona}</td>
+`;
+
             gaseosasList.appendChild(tr);
         });
 
@@ -203,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener("click", openDeleteModal);
         });
     }
+
 
     function actualizarValorTotal() {
         const selectedSabor = saborSelect.value;
@@ -320,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openEditModal(event) {
         const button = event.currentTarget;
-        console.log(button.getAttribute('data-cantidad'));
         gaseosaIdToEdit = button.getAttribute('data-id');
         editSabor.value = button.getAttribute('data-sabor');
         editCantidad.value = button.getAttribute('data-cantidad');
@@ -328,9 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
         editModoPago.value = button.getAttribute('data-modoPago');
         editSize.value = button.getAttribute('data-size');
         editValorTotal.value = button.getAttribute('data-valorTotal');
-        editPersonaNombre.value = button.getAttribute('data-personaNombre') || '';
+        // Se asigna el nombre actual al campo de edición
+        editpersona_nombre.value = button.getAttribute('data-persona_nombre') || '';
         editModal.classList.remove('hidden');
     }
+
 
     function openDeleteModal(event) {
         const button = event.currentTarget;
@@ -340,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saveEditButton.addEventListener('click', async () => {
         if (gaseosaIdToEdit) {
+            const nuevoNombre = editpersona_nombre.value;
             const updatedGaseosa = {
                 sabor: editSabor.value,
                 cantidad: editCantidad.value,
@@ -347,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modoPago: editModoPago.value,
                 size: editSize.value,
                 valorTotal: editValorTotal.value,
-                personaNombre: editPersonaNombre.value
+                persona_nombre: nuevoNombre
             };
 
             try {
@@ -358,7 +362,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    fetchGaseosas();
+                    // Actualizar directamente la fila en la tabla sin recargar
+                    const row = document.getElementById(`row-${gaseosaIdToEdit}`);
+                    if (row) {
+                        row.querySelector('.persona-nombre').textContent = nuevoNombre;
+                    }
+
                     editModal.classList.add('hidden');
                     gaseosaIdToEdit = null;
                 } else {
@@ -372,6 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+
+
 
     cancelEditButton.addEventListener('click', () => {
         editModal.classList.add('hidden');
@@ -399,7 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteModal.classList.add('hidden');
         gaseosaIdToDelete = null;
     });
-   
+
     actualizarValorTotal();
-    fetchGaseosas(); // Fetch gaseosas when the page loads
+    fetchGaseosas();
 });
+
