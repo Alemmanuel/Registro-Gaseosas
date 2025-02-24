@@ -19,6 +19,7 @@ Este proyecto es una aplicación web para registrar y gestionar la venta de gase
 - Neon
 - PostgreSQL
 - CORS
+- Vercel
 
 ## 📁 Estructura del Proyecto
 
@@ -347,46 +348,36 @@ router.post('/', createGaseosa);
 module.exports = router;
 ```
 
-## 🤝 Contribuciones
+## ☁️ Uso de Vercel y la Nube
 
-Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
+### Despliegue en Vercel
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -am 'Agrega nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+Este proyecto está desplegado en Vercel, una plataforma de despliegue en la nube que facilita la implementación de aplicaciones web. Vercel proporciona una integración continua y despliegue continuo (CI/CD) que permite que los cambios en el código se desplieguen automáticamente.
 
-## 📄 Licencia
+### Configuración de Vercel
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Para desplegar este proyecto en Vercel, sigue estos pasos:
 
-## ℹ️ Información Adicional
+1. Crea una cuenta en [Vercel](https://vercel.com/).
+2. Conecta tu repositorio de GitHub, GitLab o Bitbucket a Vercel.
+3. Importa el proyecto y selecciona la rama que deseas desplegar.
+4. Configura las variables de entorno necesarias, como `DATABASE_URL`.
+5. Haz clic en "Deploy" para desplegar el proyecto.
 
-### Funcionalidades Detalladas
+### Beneficios de la Nube
 
-- **Registro de Gaseosas**: Permite registrar una nueva gaseosa con detalles específicos como sabor, cantidad, tamaño, valor total, estado, modo de pago y nombre de la persona.
-- **Filtrado de Registros**: Los usuarios pueden filtrar los registros de gaseosas por diferentes criterios como fecha, modo de pago, tamaño, cantidad y estado.
-- **Edición de Registros**: Los usuarios pueden editar los detalles de un registro existente.
-- **Eliminación de Registros**: Los usuarios pueden eliminar un registro existente después de confirmar la acción.
+El uso de la nube para desplegar aplicaciones ofrece varios beneficios:
 
-### Diseño y Estilo
-
-- **Tailwind CSS**: Utiliza Tailwind CSS para un diseño moderno y responsivo.
-- **Font Awesome**: Utiliza iconos de Font Awesome para mejorar la interfaz de usuario.
-
-### Scripts y Funcionalidad
-
-- **JavaScript**: Utiliza JavaScript para manejar la lógica de la aplicación, incluyendo la gestión de formularios, modales y filtrado de registros.
-
-### Personalización
-
-- **Configuración de Tailwind CSS**: Puedes personalizar los colores, fuentes y otros aspectos del diseño en el archivo `tailwind.config.js`.
-- **Estilos Personalizados**: Puedes agregar estilos personalizados en el archivo `styles.css`.
+- **Escalabilidad**: La capacidad de escalar automáticamente según la demanda.
+- **Disponibilidad**: Alta disponibilidad y redundancia para garantizar que la aplicación esté siempre en línea.
+- **Seguridad**: Medidas de seguridad avanzadas para proteger los datos y la aplicación.
+- **Mantenimiento**: Reducción del tiempo y esfuerzo necesarios para el mantenimiento del servidor.
 
 ## 🏆 Mérito del Proyecto
 
-El mérito de este proyecto radica en la modernización de una microempresa que gestionaba sus registros en papel, llevándola a una plataforma digital eficiente y accesible donde es mucho mas sencillo llevar un reporte de cartera y ayudar al ecosistema. Esta transformación ha permitido una mejor gestión de los datos, mayor accesibilidad y una interfaz de usuario más intuitiva.
+El mérito de este proyecto radica en la modernización de una microempresa que gestionaba sus registros en papel, llevándola a una plataforma digital eficiente y accesible donde es mucho más sencillo llevar un reporte de cartera y ayudar al ecosistema. Esta transformación ha permitido una mejor gestión de los datos, mayor accesibilidad y una interfaz de usuario más intuitiva.
+
+## 📸 Pantallazos
 
 ## 📸 Pantallazos
 
@@ -411,4 +402,6 @@ A continuación, se presentan algunos pantallazos de la aplicación:
 
 ![Screenshot 2025-02-24 122848](https://github.com/user-attachments/assets/30869832-4772-4427-8099-45d777e1c5a3)
 
+## 📧 Contacto
 
+Si tienes alguna pregunta o necesitas más información, puedes contactarme a través de mi correo electrónico: [tuemail@example.com](mailto:tuemail@example.com).
