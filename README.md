@@ -393,16 +393,25 @@ El mérito de este proyecto radica en la modernización de una microempresa que 
 A continuación, se presentan algunos pantallazos de la aplicación:
 
 
-![Screenshot 2025-02-21 144607](https://github.com/user-attachments/assets/3fef7e88-a72e-4df6-9937-cfff72925a51)
+![Screenshot 2025-02-24 122757](https://github.com/user-attachments/assets/708afa77-9a11-4447-8f37-85e30c25dec2)
 
 
-![Screenshot 2025-02-21 144622](https://github.com/user-attachments/assets/58694da2-b1df-4969-89b9-e8b2987b0284)
+
+![Screenshot 2025-02-24 122809](https://github.com/user-attachments/assets/b6daf6ac-b01a-4b29-aa8f-469b8bc6d261)
 
 
-![Screenshot 2025-02-21 144630](https://github.com/user-attachments/assets/4f641cad-511e-4604-bfb2-f9378f4d3e5c)
+
+![Screenshot 2025-02-24 122825](https://github.com/user-attachments/assets/f4186a7f-ce68-4d37-b693-9cfa54b9a482)
 
 
-![Screenshot 2025-02-21 144650](https://github.com/user-attachments/assets/9399192c-7de6-4274-9910-300415039b71)
+
+![Screenshot 2025-02-24 122840](https://github.com/user-attachments/assets/5ccb4279-124d-4cf6-932f-ced8b95c39dc)
+
+
+
+![Screenshot 2025-02-24 122848](https://github.com/user-attachments/assets/30869832-4772-4427-8099-45d777e1c5a3)
+
+
 
 
 ## 📧 Contacto
