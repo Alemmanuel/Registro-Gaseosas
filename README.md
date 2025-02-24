@@ -387,17 +387,13 @@ A continuación, se presentan algunos pantallazos de la aplicación:
 ![Screenshot 2025-02-24 122757](https://github.com/user-attachments/assets/708afa77-9a11-4447-8f37-85e30c25dec2)
 
 
-
 ![Screenshot 2025-02-24 122809](https://github.com/user-attachments/assets/b6daf6ac-b01a-4b29-aa8f-469b8bc6d261)
-
 
 
 ![Screenshot 2025-02-24 122825](https://github.com/user-attachments/assets/f4186a7f-ce68-4d37-b693-9cfa54b9a482)
 
 
-
 ![Screenshot 2025-02-24 122840](https://github.com/user-attachments/assets/5ccb4279-124d-4cf6-932f-ced8b95c39dc)
-
 
 
 ![Screenshot 2025-02-24 122848](https://github.com/user-attachments/assets/30869832-4772-4427-8099-45d777e1c5a3)
