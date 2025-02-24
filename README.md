@@ -384,20 +384,25 @@ El mérito de este proyecto radica en la modernización de una microempresa que 
 A continuación, se presentan algunos pantallazos de la aplicación:
 
 
-![Screenshot 2025-02-24 122757](https://github.com/user-attachments/assets/708afa77-9a11-4447-8f37-85e30c25dec2)
+![image](https://github.com/user-attachments/assets/ae17e3f0-dddf-4683-bcd7-f75b7c384936)
 
 
-![Screenshot 2025-02-24 122809](https://github.com/user-attachments/assets/b6daf6ac-b01a-4b29-aa8f-469b8bc6d261)
+
+![image](https://github.com/user-attachments/assets/d7cfe062-46ba-4379-87cf-4a43dd3dffe3)
 
 
-![Screenshot 2025-02-24 122825](https://github.com/user-attachments/assets/f4186a7f-ce68-4d37-b693-9cfa54b9a482)
+
+![image](https://github.com/user-attachments/assets/07d4ee44-a5ff-4ee0-9971-e0a4f5528704)
 
 
-![Screenshot 2025-02-24 122840](https://github.com/user-attachments/assets/5ccb4279-124d-4cf6-932f-ced8b95c39dc)
+
+![image](https://github.com/user-attachments/assets/74ec4455-c039-4ef0-a3a0-f6953de00f92)
 
 
-![Screenshot 2025-02-24 122848](https://github.com/user-attachments/assets/30869832-4772-4427-8099-45d777e1c5a3)
+
+![image](https://github.com/user-attachments/assets/eb4ad5ff-8f2d-4eb4-9db9-37aee02ae966)
+
 
 ## 📧 Contacto
 
-Si tienes alguna pregunta o necesitas más información, puedes contactarme a través de mi correo electrónico: [tuemail@example.com](mailto:tuemail@example.com).
+Si tienes alguna pregunta o necesitas más información, puedes contactarme a través de mi correo electrónico: [alemmanuel0412@gmail.com].
