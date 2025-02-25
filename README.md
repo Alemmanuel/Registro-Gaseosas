@@ -1,4 +1,3 @@
-```markdown
 # 🥤 Soda Sales Management System
 
 This sophisticated web application is designed for the meticulous recording and efficient management of soda sales. Leveraging the power of Tailwind CSS for its aesthetic appeal, it offers an intuitive user interface that facilitates the seamless registration, filtration, and administration of soda sales data.
@@ -24,7 +23,6 @@ This sophisticated web application is designed for the meticulous recording and 
 
 ## 📁 Project Architecture
 
-```
 
 /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/
 │
