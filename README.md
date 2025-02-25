@@ -24,6 +24,7 @@ This sophisticated web application is designed for the meticulous recording and 
 ## 📁 Project Architecture
 
 
+```
 /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/
 │
 ├── public/
@@ -40,9 +41,9 @@ This sophisticated web application is designed for the meticulous recording and 
 │       └── gaseosasRoutes.js
 ├── tailwind.config.js
 └── README.md
+```
 
 ```plaintext
-
 ## 🛠️ Installation Protocol
 
 1. Clone the repository to your local development environment:
