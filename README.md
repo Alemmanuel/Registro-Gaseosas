@@ -1,15 +1,18 @@
-# 🥤 Registro de Gaseosas
+I apologize for the misunderstanding. You're right, you want the README translated to English. I'll provide the translation below:
 
-Este proyecto es una aplicación web para registrar y gestionar la venta de gaseosas. Utiliza Tailwind CSS para el diseño y proporciona una interfaz de usuario intuitiva para registrar, filtrar y gestionar las ventas de gaseosas.
+```markdown
+# 🥤 Soda Registry
 
-## ✨ Características
+This project is a web application for recording and managing soda sales. It uses Tailwind CSS for design and provides an intuitive user interface for registering, filtering, and managing soda sales.
 
-- Registro de ventas de gaseosas con detalles como sabor, cantidad, tamaño, valor total, estado, modo de pago y nombre de la persona.
-- Filtrado de registros por fecha, modo de pago, tamaño, cantidad y estado.
-- Edición y eliminación de registros existentes.
-- Diseño responsivo que se adapta a diferentes tamaños de pantalla.
+## ✨ Features
 
-## 🛠️ Tecnologías Utilizadas
+- Recording of soda sales with details such as flavor, quantity, size, total value, status, payment method, and person's name.
+- Filtering of records by date, payment method, size, quantity, and status.
+- Editing and deleting existing records.
+- Responsive design that adapts to different screen sizes.
+
+## 🛠️ Technologies Used
 
 - HTML5
 - Tailwind CSS
@@ -21,9 +24,10 @@ Este proyecto es una aplicación web para registrar y gestionar la venta de gase
 - CORS
 - Vercel
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
+
 /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/
 │
 ├── public/
@@ -40,26 +44,35 @@ Este proyecto es una aplicación web para registrar y gestionar la venta de gase
 │       └── gaseosasRoutes.js
 ├── tailwind.config.js
 └── README.md
+
+```plaintext
+
+## 🛠️ Installation
+
+1. Clone the repository to your local machine.
+   ```bash
+   git clone <REPOSITORY_URL>
 ```
 
-## 🛠️ Instalación
+2. Navigate to the project directory.
 
-1. Clona el repositorio en tu máquina local.
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   ```
-2. Navega al directorio del proyecto.
-   ```bash
-   cd /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2
-   ```
-3. Instala las dependencias de Node.js.
-   ```bash
-   npm install
-   ```
+```shellscript
+cd /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2
+```
 
-## 🎨 Configuración de Tailwind CSS
 
-El archivo `tailwind.config.js` contiene la configuración de Tailwind CSS. Aquí puedes personalizar los colores, fuentes y otros aspectos del diseño.
+3. Install Node.js dependencies.
+
+```shellscript
+npm install
+```
+
+
+
+
+## 🎨 Tailwind CSS Configuration
+
+The `tailwind.config.js` file contains the Tailwind CSS configuration. Here you can customize colors, fonts, and other design aspects.
 
 ```javascript
 module.exports = {
@@ -84,31 +97,34 @@ module.exports = {
 }
 ```
 
-## 🚀 Uso
+## 🚀 Usage
 
-### 📝 Registro de Gaseosas
+### 📝 Soda Registration
 
-1. Abre el archivo `index.html` en tu navegador.
-2. Completa el formulario de registro con los detalles de la gaseosa.
-3. Haz clic en el botón "Registrar Gaseosa" para abrir el modal de confirmación.
-4. Confirma el registro para agregar la gaseosa a la lista.
+1. Open the `index.html` file in your browser.
+2. Complete the registration form with the soda details.
+3. Click the "Register Soda" button to open the confirmation modal.
+4. Confirm the registration to add the soda to the list.
 
-### 🔍 Filtrado de Registros
 
-1. Utiliza los campos de filtro para seleccionar los criterios deseados.
-2. Haz clic en "Aplicar Filtros" para ver los registros que coinciden con los criterios.
-3. Haz clic en "Eliminar Filtros" para restablecer los filtros y ver todos los registros.
+### 🔍 Record Filtering
 
-### ✏️🗑️ Edición y Eliminación de Registros
+1. Use the filter fields to select the desired criteria.
+2. Click "Apply Filters" to view records matching the criteria.
+3. Click "Remove Filters" to reset filters and view all records.
 
-1. Haz clic en el icono de edición junto al registro que deseas editar.
-2. Completa los campos en el modal de edición y haz clic en "Guardar".
-3. Haz clic en el icono de eliminación junto al registro que deseas eliminar.
-4. Confirma la eliminación en el modal de confirmación.
 
-## 📱💻 Diseño Responsivo
+### ✏️🗑️ Editing and Deleting Records
 
-El diseño de la aplicación es responsivo y se adapta a diferentes tamaños de pantalla. En pantallas pequeñas, las celdas del formulario se muestran una debajo de otra. En pantallas medianas y grandes, las celdas se muestran en dos columnas.
+1. Click the edit icon next to the record you want to edit.
+2. Complete the fields in the edit modal and click "Save".
+3. Click the delete icon next to the record you want to delete.
+4. Confirm deletion in the confirmation modal.
+
+
+## 📱💻 Responsive Design
+
+The application design is responsive and adapts to different screen sizes. On small screens, form cells are displayed one below the other. On medium and large screens, cells are displayed in two columns.
 
 ```html
 <!-- filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/public/index.html -->
@@ -117,9 +133,9 @@ El diseño de la aplicación es responsivo y se adapta a diferentes tamaños de 
 </div>
 ```
 
-## 📋 Modales
+## 📋 Modals
 
-La aplicación utiliza modales para confirmar el registro, editar y eliminar registros. Los modales tienen un fondo blanco y se centran en la pantalla.
+The application uses modals to confirm registration, edit, and delete records. Modals have a white background and are centered on the screen.
 
 ```html
 <!-- filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/public/index.html -->
@@ -130,9 +146,9 @@ La aplicación utiliza modales para confirmar el registro, editar y eliminar reg
 </div>
 ```
 
-## 📜 Scroll en la Tabla de Registros
+## 📜 Scroll in Records Table
 
-La tabla de registros tiene un contenedor con scroll horizontal para manejar registros largos.
+The records table has a container with horizontal scroll to handle long records.
 
 ```html
 <!-- filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/public/index.html -->
@@ -143,132 +159,135 @@ La tabla de registros tiene un contenedor con scroll horizontal para manejar reg
 </div>
 ```
 
-## 🖥️ Backend y Archivos JavaScript
+## 🖥️ Backend and JavaScript Files
 
 ### app.js
 
-El archivo `app.js` contiene la lógica de la aplicación, incluyendo la gestión de formularios, modales y filtrado de registros.
+The `app.js` file contains the application logic, including form management, modals, and record filtering.
 
-#### Funcionalidades del archivo `app.js`
+#### Functionalities of the `app.js` file
 
-- **Registro de Gaseosas**: Maneja la lógica para registrar nuevas gaseosas.
-- **Modales**: Controla la apertura y cierre de los modales de confirmación, edición y eliminación.
-- **Filtrado de Registros**: Aplica y elimina filtros para mostrar registros específicos.
+- **Soda Registration**: Handles the logic for registering new sodas.
+- **Modals**: Controls the opening and closing of confirmation, edit, and delete modals.
+- **Record Filtering**: Applies and removes filters to display specific records.
+
 
 ```javascript
 // filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/public/app.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Lógica para manejar el registro de gaseosas
+  // Logic to handle soda registration
   const gaseosaForm = document.getElementById('gaseosaForm');
   const gaseosasList = document.getElementById('gaseosasList');
   const confirmModal = document.getElementById('confirmModal');
   const editModal = document.getElementById('editModal');
   const deleteModal = document.getElementById('deleteModal');
 
-  // Función para abrir el modal de confirmación
+  // Function to open the confirmation modal
   document.getElementById('openConfirmModal').addEventListener('click', () => {
     confirmModal.classList.remove('hidden');
   });
 
-  // Función para cerrar el modal de confirmación
+  // Function to close the confirmation modal
   document.getElementById('cancelRegister').addEventListener('click', () => {
     confirmModal.classList.add('hidden');
   });
 
-  // Función para confirmar el registro
+  // Function to confirm registration
   document.getElementById('confirmRegister').addEventListener('click', () => {
-    // Lógica para registrar la gaseosa
+    // Logic to register the soda
     confirmModal.classList.add('hidden');
   });
 
-  // Función para abrir el modal de edición
+  // Function to open the edit modal
   gaseosasList.addEventListener('click', (event) => {
     if (event.target.classList.contains('edit-button')) {
       editModal.classList.remove('hidden');
     }
   });
 
-  // Función para cerrar el modal de edición
+  // Function to close the edit modal
   document.getElementById('cancelEdit').addEventListener('click', () => {
     editModal.classList.add('hidden');
   });
 
-  // Función para guardar los cambios de edición
+  // Function to save edit changes
   document.getElementById('saveEdit').addEventListener('click', () => {
-    // Lógica para guardar los cambios
+    // Logic to save changes
     editModal.classList.add('hidden');
   });
 
-  // Función para abrir el modal de eliminación
+  // Function to open the delete modal
   gaseosasList.addEventListener('click', (event) => {
     if (event.target.classList.contains('delete-button')) {
       deleteModal.classList.remove('hidden');
     }
   });
 
-  // Función para cerrar el modal de eliminación
+  // Function to close the delete modal
   document.getElementById('cancelDelete').addEventListener('click', () => {
     deleteModal.classList.add('hidden');
   });
 
-  // Función para confirmar la eliminación
+  // Function to confirm deletion
   document.getElementById('confirmDelete').addEventListener('click', () => {
-    // Lógica para eliminar el registro
+    // Logic to delete the record
     deleteModal.classList.add('hidden');
   });
 
-  // Función para aplicar filtros
+  // Function to apply filters
   document.getElementById('applyFilters').addEventListener('click', () => {
-    // Lógica para aplicar filtros
+    // Logic to apply filters
   });
 
-  // Función para eliminar filtros
+  // Function to remove filters
   document.getElementById('clearFilters').addEventListener('click', () => {
-    // Lógica para eliminar filtros
+    // Logic to remove filters
   });
 });
 ```
 
-## 🎨 Archivos CSS
+## 🎨 CSS Files
 
 ### styles.css
 
-El archivo `styles.css` contiene estilos personalizados adicionales que complementan los estilos de Tailwind CSS.
+The `styles.css` file contains additional custom styles that complement Tailwind CSS styles.
 
-#### Funcionalidades del archivo `styles.css`
+#### Functionalities of the `styles.css` file
 
-- **Estilos Personalizados**: Define estilos adicionales que no están cubiertos por Tailwind CSS.
-- **Tipografía**: Configura la fuente principal de la aplicación.
+- **Custom Styles**: Defines additional styles not covered by Tailwind CSS.
+- **Typography**: Configures the main font of the application.
+
 
 ```css
 /* filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/public/styles.css */
-/* Estilos personalizados */
+/* Custom styles */
 body {
   font-family: 'Inter', sans-serif;
 }
 /* ...existing code... */
 ```
 
-## 📦 Dependencias
+## 📦 Dependencies
 
-### Dependencias de Node.js
+### Node.js Dependencies
 
-Para utilizar las funcionalidades del backend en este proyecto, es necesario instalar las siguientes dependencias:
+To use the backend functionalities in this project, it's necessary to install the following dependencies:
 
-- **express**: Un framework web para Node.js.
-- **neon**: Un cliente para PostgreSQL.
-- **pg**: Un cliente de PostgreSQL para Node.js.
-- **cors**: Un middleware para habilitar CORS (Cross-Origin Resource Sharing).
+- **express**: A web framework for Node.js.
+- **neon**: A PostgreSQL client.
+- **pg**: A PostgreSQL client for Node.js.
+- **cors**: A middleware to enable CORS (Cross-Origin Resource Sharing).
 
-Instalación de dependencias:
 
-```bash
+Installing dependencies:
+
+```shellscript
 npm install express neon pg cors
 ```
 
-### Configuración del Servidor
+### Server Configuration
 
-El archivo `server.js` contiene la configuración del servidor utilizando Express.
+The `server.js` file contains the server configuration using Express.
 
 ```javascript
 // filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/server/server.js
@@ -288,9 +307,9 @@ app.listen(PORT, () => {
 });
 ```
 
-### Controladores
+### Controllers
 
-El archivo `gaseosasController.js` contiene la lógica para manejar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las gaseosas.
+The `gaseosasController.js` file contains the logic to handle CRUD operations (Create, Read, Update, Delete) for sodas.
 
 ```javascript
 // filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/server/controllers/gaseosasController.js
@@ -330,9 +349,9 @@ module.exports = {
 };
 ```
 
-### Rutas
+### Routes
 
-El archivo `gaseosasRoutes.js` define las rutas para las operaciones CRUD de las gaseosas.
+The `gaseosasRoutes.js` file defines the routes for soda CRUD operations.
 
 ```javascript
 // filepath: /c:/Users/cmonroyitos/Documents/Proyectos/Registro_Gaseosas2/server/routes/gaseosasRoutes.js
@@ -348,39 +367,40 @@ router.post('/', createGaseosa);
 module.exports = router;
 ```
 
-## ☁️ Uso de Vercel y la Nube
+## ☁️ Using Vercel and the Cloud
 
-### Despliegue en Vercel
+### Deployment on Vercel
 
-Este proyecto está desplegado en Vercel, una plataforma de despliegue en la nube que facilita la implementación de aplicaciones web. Vercel proporciona una integración continua y despliegue continuo (CI/CD) que permite que los cambios en el código se desplieguen automáticamente.
+This project is deployed on Vercel, a cloud deployment platform that facilitates the implementation of web applications. Vercel provides continuous integration and continuous deployment (CI/CD) that allows code changes to be automatically deployed.
 
-### Configuración de Vercel
+### Vercel Configuration
 
-Para desplegar este proyecto en Vercel, sigue estos pasos:
+To deploy this project on Vercel, follow these steps:
 
-1. Crea una cuenta en [Vercel](https://vercel.com/).
-2. Conecta tu repositorio de GitHub, GitLab o Bitbucket a Vercel.
-3. Importa el proyecto y selecciona la rama que deseas desplegar.
-4. Configura las variables de entorno necesarias, como `DATABASE_URL`.
-5. Haz clic en "Deploy" para desplegar el proyecto.
+1. Create an account on [Vercel](https://vercel.com/).
+2. Connect your GitHub, GitLab, or Bitbucket repository to Vercel.
+3. Import the project and select the branch you want to deploy.
+4. Configure the necessary environment variables, such as `DATABASE_URL`.
+5. Click "Deploy" to deploy the project.
 
-### Beneficios de la Nube
 
-El uso de la nube para desplegar aplicaciones ofrece varios beneficios:
+### Cloud Benefits
 
-- **Escalabilidad**: La capacidad de escalar automáticamente según la demanda.
-- **Disponibilidad**: Alta disponibilidad y redundancia para garantizar que la aplicación esté siempre en línea.
-- **Seguridad**: Medidas de seguridad avanzadas para proteger los datos y la aplicación.
-- **Mantenimiento**: Reducción del tiempo y esfuerzo necesarios para el mantenimiento del servidor.
+Using the cloud to deploy applications offers several benefits:
 
-## 🏆 Mérito del Proyecto
+- **Scalability**: The ability to automatically scale according to demand.
+- **Availability**: High availability and redundancy to ensure the application is always online.
+- **Security**: Advanced security measures to protect data and the application.
+- **Maintenance**: Reduction of time and effort required for server maintenance.
 
-El mérito de este proyecto radica en la modernización de una microempresa que gestionaba sus registros en papel, llevándola a una plataforma digital eficiente y accesible donde es mucho más sencillo llevar un reporte de cartera y ayudar al ecosistema. Esta transformación ha permitido una mejor gestión de los datos, mayor accesibilidad y una interfaz de usuario más intuitiva.
 
-## 📸 Pantallazos
+## 🏆 Project Merit
 
-A continuación, se presentan algunos pantallazos de la aplicación:
+The merit of this project lies in the modernization of a microenterprise that managed its records on paper, bringing it to an efficient and accessible digital platform where it is much easier to keep a portfolio report and help the ecosystem. This transformation has allowed for better data management, greater accessibility, and a more intuitive user interface.
 
+## 📸 Screenshots
+
+Here are some screenshots of the application:
 
 ![image](https://github.com/user-attachments/assets/ae17e3f0-dddf-4683-bcd7-f75b7c384936)
 
@@ -400,7 +420,6 @@ A continuación, se presentan algunos pantallazos de la aplicación:
 
 ![image](https://github.com/user-attachments/assets/eb4ad5ff-8f2d-4eb4-9db9-37aee02ae966)
 
+## 📧 Contact
 
-## 📧 Contacto
-
-Si tienes alguna pregunta o necesitas más información, puedes contactarme a través de mi correo electrónico: [alemmanuel0412@gmail.com].
+If you have any questions or need more information, you can contact me via my email: [[alemmanuel0412@gmail.com](mailto:alemmanuel0412@gmail.com)].
