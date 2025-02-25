@@ -1,6 +1,3 @@
-I apologize for the misunderstanding. You're right, you want the README translated to English. I'll provide the translation below:
-
-```markdown
 # 🥤 Soda Registry
 
 This project is a web application for recording and managing soda sales. It uses Tailwind CSS for design and provides an intuitive user interface for registering, filtering, and managing soda sales.
